@@ -2,10 +2,10 @@ const { prompt } = require("enquirer");
 
 prompt({
     type: "input",
-    message: "What is your favourite colour?",
-    name: "faveColour",
-}).then(handleColourInput);
+    message: "What is your favourite song?",
+    name: "faveSong",
+}).then(handleSongInput);
 
-function handleColourInput(result) {
-    console.log("you said your colour was: ", result.faveColour);
+function handleSongInput(result) {
+    console.log("you said your favourite song was: ", result.faveSong);
 }
