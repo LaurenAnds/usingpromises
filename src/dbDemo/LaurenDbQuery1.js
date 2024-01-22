@@ -8,6 +8,6 @@ pool.query("select * from hiscores").then((results) => {
 
 function displayScores(scoreRows) {
     for (let row of scoreRows) {
-        console.log(row.id + " scored " + row.score);
+        console.log("User " + row.username + " scored " + row.score + " at " + row.time);
     }
 }
