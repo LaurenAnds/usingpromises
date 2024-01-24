@@ -17,17 +17,17 @@ prompt({
 function handleEpisodeInput(result) {
     console.log("you entered: ", result.episodeSearch);
     const resultingPromise = axios.get(url);
-    resultingPromise.then(handleCompletedPromise);
+    resultingPromise.then(response => handleCompletedPromise(response, result.episodeSearch));
 }
 
 //search for term
 
-function handleCompletedPromise(result) {
-    const episodeSearchTerm = result.episodeSearch;
+function handleCompletedPromise(result, searchWord) {
+    // const episodeSearchTerm = result.episodeSearch;
     console.log("Promise completed.  Result contains: ");
     console.log("Episode titles containing ", result.episodeSearch);
     for(let i = 0; i < result.data.length; i++){
-        if(result.data[i].name.includes(episodeSearchTerm)){
+        if(result.data[i].name.includes(searchWord)){
             console.log(result.data[i].name);
         }
     }
